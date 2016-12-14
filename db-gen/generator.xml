@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+    <classPathEntry location="./lib/mysql-connector-java-5.1.5-bin.jar" />
+
+    <context  id="DB2Tables" targetRuntime="MyBatis3" >
+
+        <!-- 去除自动生成的注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection connectionURL="jdbc:mysql://120.132.68.148:3306/wx?characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull" driverClass="com.mysql.jdbc.Driver"  password="123456" userId="dev" />
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator
+            targetPackage="com.sbk.ios.gifts.giver.db.model.wx"
+            targetProject="../src\main\java\" >
+            <property name="enableSubPackages" value="true" />
+            <property  name="trimStrings" value="true" />
+        </javaModelGenerator>
+		<!--xml-->
+        <sqlMapGenerator
+            targetPackage="com.sbk.ios.gifts.giver.db.persistence.wx"
+            targetProject="../src\main\resources\" >
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+		<!--java-->
+        <javaClientGenerator
+            targetPackage="com.sbk.ios.gifts.giver.db.persistence.wx"
+            targetProject="../src\main\java\"  type="XMLMAPPER" >
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+		
+        <!-- tableName:用于自动生成代码的数据库表；domainObjectName:对应于数据库表的javaBean类名 -->
+		<table tableName="activecode" domainObjectName="Activecode"><generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/></table>
+		<table tableName="codetype" domainObjectName="Codetype"><generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/></table>
+		<table tableName="game" domainObjectName="Game"><generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/></table>
+		<table tableName="giftpage" domainObjectName="Giftpage"><generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/></table>
+		<table tableName="gifttype" domainObjectName="Gifttype"><generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/></table>
+		<table tableName="phone" domainObjectName="Phone"><generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/></table>
+
+	</context>
+</generatorConfiguration>
