@@ -12,27 +12,27 @@
             <property name="suppressAllComments" value="true" />
         </commentGenerator>
 
-        <jdbcConnection connectionURL="jdbc:mysql://120.132.68.148:3306/wx?characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull" driverClass="com.mysql.jdbc.Driver"  password="123456" userId="dev" />
+        <jdbcConnection connectionURL="jdbc:mysql://192.168.190.1:3306/wx?characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull" driverClass="com.mysql.jdbc.Driver"  password="admin" userId="root" />
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
         <javaModelGenerator
-            targetPackage="com.sbk.ios.gifts.giver.db.model.wx"
+            targetPackage="com.sbk.ios.gifts.giver.domain"
             targetProject="../src\main\java\" >
             <property name="enableSubPackages" value="true" />
             <property  name="trimStrings" value="true" />
         </javaModelGenerator>
 		<!--xml-->
         <sqlMapGenerator
-            targetPackage="com.sbk.ios.gifts.giver.db.persistence.wx"
+            targetPackage="com.sbk.ios.gifts.giver.mapper"
             targetProject="../src\main\resources\" >
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 		<!--java-->
         <javaClientGenerator
-            targetPackage="com.sbk.ios.gifts.giver.db.persistence.wx"
+            targetPackage="com.sbk.ios.gifts.giver.mapper"
             targetProject="../src\main\java\"  type="XMLMAPPER" >
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
